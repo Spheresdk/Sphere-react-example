@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useSphere } from '@sphere/connect';
+import { useSphere } from '@sphereorg/connect';
 
 export const ReceiveTransaction = () => {
     const { wallet, balance } = useSphere();

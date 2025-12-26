@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useSphere, type Network } from '@sphere/connect';
+import { useSphere, type Network } from '@sphereorg/connect';
 
 export const Header = ({ onOpenModal }: { onOpenModal: () => void }) => {
     const { isAuthenticated, wallet, logout, sdk, refreshData } = useSphere();

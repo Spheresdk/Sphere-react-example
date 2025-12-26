@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { useSphere } from '@sphere/connect';
+import { useSphere } from '@sphereorg/connect';
 
 interface SendTransactionProps {
     onClose: () => void;
