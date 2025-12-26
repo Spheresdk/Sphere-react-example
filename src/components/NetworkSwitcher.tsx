@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useSphere, type Network } from '@sphereorg/connect';
+import { useSphere, type Network } from 'sphere-connect';
 import { SPHERE_CONFIG } from '../config/sphere';
 
 export const NetworkSwitcher = () => {

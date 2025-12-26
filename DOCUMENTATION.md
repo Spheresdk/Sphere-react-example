@@ -24,7 +24,7 @@ src/
 ## 1. Installation
 
 ```bash
-npm install @sphereorg/connect
+npm install sphere-connect
 ```
 
 ---

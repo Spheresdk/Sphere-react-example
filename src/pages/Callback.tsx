@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSphere, SphereModal } from '@sphereorg/connect';
+import { useSphere, SphereModal } from 'sphere-connect';
 import { Hero } from '../components/Hero';
 
 export const Callback = () => {

@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { SphereProvider } from '@sphereorg/connect'
+import { SphereProvider } from 'sphere-connect'
 import { SPHERE_CONFIG } from './config/sphere'
 import './index.css'
 import App from './App.tsx'

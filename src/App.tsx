@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useSphere, SphereModal } from '@sphereorg/connect';
+import { useSphere, SphereModal } from 'sphere-connect';
 import { Dashboard } from './components/Dashboard';
 import { Hero } from './components/Hero';
 import { Callback } from './pages/Callback';

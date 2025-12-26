@@ -1,4 +1,4 @@
-import type { SDKConfig, Network } from '@sphereorg/connect';
+import type { SDKConfig, Network } from 'sphere-connect';
 
 /**
  * Sphere SDK Configuration

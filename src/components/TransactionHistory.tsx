@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useSphere } from '@sphereorg/connect';
+import { useSphere } from 'sphere-connect';
 import { fetchAccountActivities } from '../services/indexer';
 
 export const TransactionHistory = () => {

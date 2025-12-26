@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useSphere } from '@sphereorg/connect';
+import { useSphere } from 'sphere-connect';
 import { Modal } from './Modal';
 import { SendTransaction } from './SendTransaction';
 import { ReceiveTransaction } from './ReceiveTransaction';
