@@ -73,18 +73,32 @@ Use the `useSphere` hook to manage the user session and access the wallet.
 import { useSphere } from '@sphere/connect';
 
 export function LoginButton() {
-  const { login, logout, isAuthenticated, wallet, email } = useSphere();
+    const { 
+        login, 
+        logout, 
+        isAuthenticated, 
+        userEmail,
+        userName,
+        userPicture,
+        wallet, 
+        walletInfo, 
+        balance 
+    } = useSphere();
 
-  if (isAuthenticated) {
     return (
-      <div>
-        <span>{email} ({wallet?.getAddress().slice(0, 6)}...)</span>
-        <button onClick={logout}>Logout</button>
-      </div>
+        <div>
+            {isAuthenticated ? (
+                <>
+                    <img src={userPicture} alt="Avatar" style={{ width: 48, height: 48, borderRadius: '50%' }} />
+                    <p>Welcome, {userName || userEmail}!</p>
+                    <p>Wallet: {wallet?.getAddress()}</p>
+                    <button onClick={logout}>Logout</button>
+                </>
+            ) : (
+                <button onClick={login}>Login with Google</button>
+            )}
+        </div>
     );
-  }
-
-  return <button onClick={login}>Login with Google</button>;
 }
 ```
 

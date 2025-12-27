@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useSphere, SphereModal } from 'sphere-connect';
+import { useSphere, SphereModal, SphereAvatar } from 'sphere-connect';
 import { Dashboard } from './components/Dashboard';
 import { Hero } from './components/Hero';
 import { Callback } from './pages/Callback';
 import './App.css';
 
 function Sidebar() {
-  const { wallet, email, sdk } = useSphere();
+  const { wallet, userEmail, userName, userPicture, sdk } = useSphere();
   const address = wallet?.getAddress() || '';
 
   const handleLogout = async () => {
@@ -28,12 +28,15 @@ function Sidebar() {
 
       <div className="sidebar-footer">
         <div className="user-profile">
-          <div className="user-avatar">
-            {email?.charAt(0).toUpperCase() || 'U'}
-          </div>
+          <SphereAvatar
+            src={userPicture}
+            name={userName}
+            size={40}
+            className="user-avatar"
+          />
           <div className="user-info">
-            <div className="user-name">{email?.split('@')[0] || 'User'}</div>
-            <div className="user-email">{email || ''}</div>
+            <div className="user-name">{userName || userEmail?.split('@')[0] || 'User'}</div>
+            <div className="user-email">{userEmail || ''}</div>
           </div>
           <button
             onClick={handleLogout}
@@ -72,7 +75,7 @@ function Sidebar() {
 }
 
 function MobileHeader() {
-  const { sdk, email } = useSphere();
+  const { sdk, userEmail, userName, userPicture } = useSphere();
 
   const handleLogout = async () => {
     await sdk.logout();
@@ -84,8 +87,13 @@ function MobileHeader() {
       <div style={{ fontWeight: 600, fontSize: '1.1rem' }}>Sphere</div>
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
         <div style={{ fontSize: '0.85rem', color: '#888' }}>
-          {email?.split('@')[0]}
+          {userName || userEmail?.split('@')[0]}
         </div>
+        <SphereAvatar
+          src={userPicture}
+          name={userName}
+          size={24}
+        />
         <button
           onClick={handleLogout}
           style={{
